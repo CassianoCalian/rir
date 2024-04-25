@@ -1,0 +1,98 @@
+@use "variables";
+@use "fonts";
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+
+  &__itens {
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+
+    a {
+      text-decoration: none;
+      color: variables.$text_color_primary;
+      font-family: fonts.$primary-font;
+      font-weight: bold;
+    }
+  }
+}
+
+.hero {
+  position: relative;
+  padding-top: 64px;
+  padding-bottom: 200px;
+  background-image: url(/images/hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .container,
+  .nav,
+  p {
+    position: relative;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    content: "";
+    opacity: 0.7;
+  }
+
+  .__text {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    font-family: fonts.$primary-font;
+  }
+
+  &__logo {
+    height: 40px;
+    background-color: transparent;
+  }
+
+  p {
+    justify-content: center;
+    align-items: center;
+    margin-top: 32px;
+    text-align: center;
+    font-family: fonts.$primary-font;
+    font-size: 38px;
+    color: variables.$text_color_primary;
+    padding-top: 100px;
+  }
+  span {
+    display: block;
+    font-size: 38px;
+    color: variables.$text_color_primary;
+    font-family: fonts.$primary-font;
+  }
+
+  @media (max-width: 640px) {
+    padding: 40px;
+    &__logo {
+      height: 28px;
+    }
+
+    p {
+      font-size: 22px;
+      padding-top: 50px;
+    }
+
+    span {
+      font-size: 22px;
+    }
+  }
+  .nav a {
+    font-size: 12px;
+  }
+}
